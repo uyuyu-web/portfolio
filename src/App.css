@@ -1,0 +1,334 @@
+/* ローディング画面 */
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, #a8e05f, #ffffff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  overflow: hidden;
+}
+
+/* 背景の粒子 */
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ff6f61;
+  border-radius: 50%;
+  opacity: 0.9;
+  filter: blur(2px);
+  animation-name: floatParticle;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+/* ジャンプするドット */
+.game-loader {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.game-loader span {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #ff6f61;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ff6f61;
+  animation: jump 1s infinite ease-in-out;
+}
+
+.game-loader span:nth-child(2) { animation-delay: 0.1s; }
+.game-loader span:nth-child(3) { animation-delay: 0.2s; }
+.game-loader span:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px) translateX(5px) scale(1.2); }
+}
+
+/* LOADING文字 */
+.loading-text {
+  color: #ff6f61;
+  font-family: "Press Start 2P", monospace;
+  font-size: 20px;
+  letter-spacing: 4px;
+  animation: blink 1s infinite;
+  margin-top: 20px;
+  z-index: 1;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.home-label {
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.home-label:hover {
+  color: #6e0202;
+  background-color: #333;
+  transform: scale(1.08);
+}
+
+/* ドットの色もホバーで白に変えたい場合 */
+.home-label:hover span {
+color: #6e0202;
+transform: scale(1.08);
+
+}
+
+/* 下からスライド＆フェードイン */
+/* 下からフェードインポップアップ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px); /* 下から上に動く */
+  animation: fadeUp 1.5s forwards;
+}
+
+.fade-up:nth-child(1) { animation-delay: 0s; }
+.fade-up:nth-child(2) { animation-delay: 0.3s; }
+.fade-up:nth-child(3) { animation-delay: 0.6s; }
+.fade-up:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section{
+  min-height:100vh;
+  padding:350px 50px;
+  border-top:1px solid #ddd;
+  font-size:60px;
+}
+
+.section h1 {
+  font-size: 100px;   /* Developer H1 と同じ大きさに */
+  font-weight: 700;  /* 太さ */
+  color: #000;       /* 黒 */
+  margin-bottom: 20px;
+}
+
+.section h3{
+  margin-top:40px;
+  font-size:28px;
+}
+
+.section p{
+  line-height:1.8;
+  font-size:18px;
+  max-width:800px;
+}
+
+.section strong{
+  color:#000;
+}
+
+
+.developer-content{
+  display:flex;
+  gap:40px;
+  margin-top:40px;
+  align-items:flex-start;
+  flex-wrap:nowrap;
+}
+
+/* 左側テキスト */
+
+.developer-text{
+ flex: 0 0 70%;          /* 文章の幅55% */
+  font-size:1.4vw;
+  line-height: 1.3;
+  white-space: nowrap; /* 改行させない */
+  margin-left: 800px; 
+}
+
+.developer-text p{
+  font-size:clamp(20px, 2.5vw, 60px);
+  line-height:2;
+  margin-bottom:20px;
+}
+
+/* 右側画像 or PDF */
+
+.developer-media{
+  flex:1 1 40%;
+  position:relative;
+}
+
+
+.developer-media{
+  text-align:center;
+    position: absolute !important;
+  top:10070px !important;
+  left: 3200px !important;
+    /* 左寄せにするなら0、右にずらすならpx指定 */    /* 左寄せにするなら0、右にずらすならpx指定 */
+
+}
+
+.developer-media iframe{
+   width:900px;
+  height:900px;
+  border:none;
+  border-radius:12px;
+  box-shadow:0 6px 14px rgba(0,0,0,0.2);
+  overflow:scroll;
+  pointer-events:auto;
+}
+
+/* スマホ対応 */
+
+@media (max-width:900px){
+
+  .developer-content{
+    flex-direction:column;
+  }
+
+  
+
+}
+.tetris-media {
+  position: relative; /* 子要素の absolute 用 */
+}
+
+.tetris-gif {
+  position: absolute;
+  top: 1900px;    /* 上からの距離 */
+  left: 200px;  /* 左からの距離 */
+  width: 600px;
+}
+
+.tetris-button:hover{
+  transform: scale(1.1);   /* ちょっと大きくなる */
+  background-color: #0051a3; /* 色変化 */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* 光りっぽく */
+}
+
+/* Tetris ボタンの位置・スタイル */
+.tetris-button {
+   display: inline-block;
+  padding: 12px 24px;
+  background: #0070f3;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+
+  /* ボタンの位置を自由に設定 */
+  margin-top: 2600px;   /* GIFとの縦間隔 */
+  margin-left: 240px;     /* 左右位置調整 */
+  /* 右寄せにしたい場合は margin-left: auto; display:block; を追加 */
+}
+
+
+.play-button{
+    display:inline-block;
+  padding:12px 24px;
+  background:#0070f3;
+  color:white;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+
+  position: relative;
+  z-index: 9999;   /* ←追加 */
+
+  transition: all 0.3s ease; /* アニメーション追加 */
+}
+
+.play-button:hover{
+  transform: scale(1.1);   /* ちょっと大きくなる */
+  background-color: #0051a3; /* 色変化 */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* 光りっぽく */
+}
+
+.developer-content{
+  display:flex;
+  gap:60px;
+  margin-bottom:120px;
+}
+
+.tech-section h2{
+  font-size:60px;
+  margin-bottom:90px;
+}
+
+
+
+
+.tech-section{
+  margin-top:600px;
+  text-align:center;
+}
+
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(140px,1fr));
+  gap:90px;
+  max-width:1000px;
+  margin:0 auto;
+}
+
+.tech-grid img{
+  width:110px;
+  padding:40px;
+  background:white;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  transition:all .3s;
+}
+
+.tech-grid img:hover{
+  transform:translateY(-10px) scale(1.1);
+  box-shadow:0 20px 40px rgba(0,0,0,0.25);
+}
+
+.fade-in{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.education-section {
+  background-color: #ffffff;  /* 好きな色に変更 */
+}
+

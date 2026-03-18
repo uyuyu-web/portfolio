@@ -1,0 +1,37 @@
+.profile-photo {
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  border: 4px solid black;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-photo:hover {
+  border-color: #a8e05f; /* ホバーで緑縁 */
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* クリック時のアニメーション */
+.profile-photo.animate {
+  animation: rotateBounce 1s ease;
+}
+
+/* アニメーション定義 */
+@keyframes rotateBounce {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(20deg) scale(1.1); }
+  50% { transform: rotate(-20deg) scale(0.9); }
+  75% { transform: rotate(10deg) scale(1.05); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;  /* 横方向中央 */
+  align-items: center;      /* 縦方向中央 */
+  width: 100%;              /* 親の幅を画面いっぱいに */
+  margin: 20px auto;        /* 上下にマージン、左右は自動 */
+}

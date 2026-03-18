@@ -1,0 +1,66 @@
+/* About セクション */
+.about {
+  padding: 100px 10%;
+  background: #fcfbf5; /* 明るい背景 */
+  color: #333;
+}
+
+.about h1 {
+   font-size: 100px;   /* Developer H1 と同じ大きさに */
+  font-weight: 700;  /* 太さ */
+  color: #000;       /* 黒 */
+  margin-bottom: 120px;
+}
+
+/* グリッド: 3列固定 */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列 */
+  gap: 40px;
+  justify-items: center; /* 真ん中揃え */
+}
+
+/* カード */
+.about-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;       /* カード幅をグリッドに合わせる */
+  max-width: 850px;  /* 大きめのカード */
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* 画像・動画・Spotify */
+.about-media {
+  width: 100%;
+  height: 500px;  /* 高さを大きめに */
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Spotify iframe 高さ */
+.about-card iframe.about-media {
+    width: 100%;
+  height: 500px;  /* 大きめに調整 */
+  border-radius: 12px;
+  object-fit: cover;
+  object-fit: cover; 
+}
+
+/* タイトル */
+.about-card h3 {
+  text-align: center;
+  font-size: 35px;  /* 少し大きめ */
+  padding: 15px;
+  margin: 0;
+  font-weight: bold;
+}
+

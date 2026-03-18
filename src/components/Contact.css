@@ -1,0 +1,186 @@
+.contact {
+
+  padding: 120px 10%;
+  background: #fcfbf5;
+
+}
+
+
+.section-title {
+  font-size: 100px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+  margin-top: -20px;
+ margin-left: -400px;
+}
+
+.contact {
+  padding: 120px 10%;
+  background: #fcfbf5;
+  border-top: 1px solid #ddd;  /* ここで線を追加 */
+}
+
+/* 白いカード */
+
+.contact-box {
+
+  background: white;
+
+  width: 80vw;
+  max-width: 2000px;
+  margin: auto;
+
+  padding: 9vw;
+
+  border-radius: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+
+  gap: 100px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  margin-top: 200px; /* ここで下にずらす量を調整 */
+
+}
+
+/* 左側 */
+
+.contact-left h1 {
+
+  font-size: clamp(40px, 4vw, 150px);
+white-space: nowrap;
+  letter-spacing: 1px;
+  margin-top: -200px;
+ margin-left: -120px;
+
+}
+
+.contact-subtitle {
+font-size: 70px;
+  font-weight: bold;
+margin-top: -20px;
+ margin-left: -30px;
+}
+
+.contact-description {
+font-size: 40px;
+
+  color: #666;
+margin-top: 40px;
+ margin-left: -30px;
+}
+
+
+
+/* フォーム */
+
+.contact-right form {
+position: relative; /* 相対位置で調整 */
+  top: 50px;   /* 下に移動 */
+  left: 50px;  /* 右に移動 */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+/* 名前 */
+
+.name-row {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+}
+
+/* input */
+
+.contact-right input,
+.contact-right textarea {
+
+  padding: 0.5vw;
+
+  border-radius: 8px;
+  border: 1px solid #ccc;
+
+  font-size: 0.5vw;
+
+}
+
+/* ボタン */
+
+.contact-right button {
+
+  background: black;
+  color: white;
+
+  padding: 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.contact-right button:hover {
+
+  background: #333;
+  transform: scale(1.05);
+
+}
+
+/* success */
+
+.success {
+
+  color: green;
+  font-weight: bold;
+
+}
+
+.footer {
+  position: fixed;      /* 画面に固定 */
+  bottom: 20px;         /* 下から20px */
+  right: 70px;          /* 右から20px */
+  background: #fcfbf5;  /* 好みの色 */
+  padding: 10px 20px;
+  border-radius: 8px;   /* 角丸 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-size: 30px;
+  color: #333;
+  z-index: 1000;        /* 他の要素より前に表示 */
+}
+
+.contact-email {
+  display: flex;          /* 横並び */
+  align-items: center;    /* 縦中央揃え */
+  gap: 10px;              /* アイコンと文字の間隔 */
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-email .email-icon {
+  color: #ff6f61;         /* アイコン色 */
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(-10px);
+}
+
+.success.show {
+  opacity: 1;
+  transform: translateY(0);
+}

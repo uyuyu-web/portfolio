@@ -1,0 +1,47 @@
+.education-title {
+   font-size: 100px;   /* Developer H1 と同じ大きさに */
+  font-weight: 700;  /* 太さ */
+  color: #000;       /* 黒 */
+  margin-bottom: 20px;
+}
+
+#education {
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 40px);
+}
+
+.education-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.timeline-fruit {
+  position: absolute;
+  transform: translateX(-50%) scale(0.5);
+  background-color: #dec060;
+  color: #000;
+  padding: 35px 20px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.timeline-fruit p {
+  margin: 0;
+  white-space: normal;
+  word-break: break-word;
+  font-size: 32px;
+}
