@@ -9,6 +9,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import { FiFile } from "react-icons/fi";
 import "./App.css";
+import { FiHome } from "react-icons/fi";
 
 function App() {
   const [loading, setLoading] = useState(true);
