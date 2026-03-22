@@ -11,6 +11,12 @@
   overflow: hidden;
 }
 
+.glitch-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
 /* 背景の粒子 */
 .particles {
   position: absolute;

@@ -97,8 +97,9 @@ const GlitchBackground = () => {
 
     // リサイズ対応
     const handleResize = () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      const rect = canvas.parentElement.getBoundingClientRect();
+width = canvas.width = rect.width;
+height = canvas.height = rect.height;
     };
     window.addEventListener("resize", handleResize);
 
@@ -109,7 +110,7 @@ const GlitchBackground = () => {
     <canvas
       ref={canvasRef}
       style={{
-        position: "fixed",
+        position: "absolute",
         top: 0,
         left: 0,
         width: "100%",
